@@ -18,14 +18,16 @@ config.jwt = {
     'JSON_WEB_TOKEN_EXPIRATION': parseInt(process.env.JSON_WEB_TOKEN_EXPIRATION)
 };
 
-const auth = {
-    twitter: {
-        'key': process.env.TWITTER_CONSUMER_KEY,
-        'secret': process.env.TWITTER_CONSUMER_SECRET
+config.auth = {
+    google: {
+        'id': process.env.GOOGLE_CLIENT_ID,
+        'secret': process.env.GOOGLE_CLIENT_SECRET
+    },
+    facebook: {
+        'id': process.env.FACEBOOK_APP_ID,
+        'secret': process.env.FACEBOOK_APP_SECRET
     }
 };
-
-config.auth = auth;
 
 (async () => {
     try {

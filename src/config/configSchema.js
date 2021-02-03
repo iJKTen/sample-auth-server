@@ -25,13 +25,21 @@ const configSchema = Joi.object({
             .error((errors) => new Error('"JSON_WEB_TOKEN_EXPIRATION" needs to be a number in seconds.'))
     }),
     auth: Joi.object({
-        twitter: Joi.object({
-            key: Joi.string()
+        google: Joi.object({
+            id: Joi.string()
                 .required()
-                .error((errors) => new Error('"TWITTER_CONSUMER_KEY" cannot be empty.')),
+                .error((errors) => new Error('"GOOGLE_CLIENT_ID" cannot be empty.')),
             secret: Joi.string()
                 .required()
-                .error((errors) => new Error('"TWITTER_CONSUMER_SECRET" cannot be empty.'))
+                .error((errors) => new Error('"GOOGLE_CLIENT_SECRET" cannot be empty.'))
+        }),
+        facebook: Joi.object({
+            id: Joi.string()
+                .required()
+                .error((errors) => new Error('"FACEBOOK_APP_ID" cannot be empty.')),
+            secret: Joi.string()
+                .required()
+                .error((errors) => new Error('"FACEBOOK_APP_SECRET" cannot be empty.'))
         })
     })
 });
