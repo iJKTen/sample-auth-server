@@ -12,3 +12,5 @@ passport.use(new GoogleStrategy({
     console.log(accessToken, refreshToken, profile);
     done(null);
 }));
+
+module.exports = passport;
